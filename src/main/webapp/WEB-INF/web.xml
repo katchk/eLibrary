@@ -9,14 +9,27 @@
         <param-name>javax.faces.CONFIG_FILES</param-name>
         <param-value>/faces-config.xml</param-value>
     </context-param>
+
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>com.katchgr.elibrary.filters.LoginFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/secured/*</url-pattern>
+    </filter-mapping>
+
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
+
 
 </web-app>
